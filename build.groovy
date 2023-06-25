@@ -27,7 +27,7 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'mundosE-jenkins', url: 'git@github.com:jerrykpg/holamundo-jenkins-pipeline.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-to-github-ssh', url: 'git@github.com:jerrykpg/holamundo-jenkins-pipeline.git']]])
             }
         }
         stage('Build artifact'){
